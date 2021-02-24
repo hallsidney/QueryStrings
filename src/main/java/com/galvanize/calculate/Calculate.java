@@ -7,15 +7,16 @@ public class Calculate {
     private String y;
     private String operation = "add";
 
-    public List<String> getN() {
-        return n;
-    }
-
-    public void setN(List<String> n) {
-        this.n = n;
-    }
+    private String length, width, height;
 
     private List<String> n;
+
+    public String volume() {
+        int val = Integer.parseInt(this.length) * Integer.parseInt(this.width) * Integer.parseInt(this.height);
+        String result = "The volume of a " + this.length + "x" + this.width+ "x" + this.height + " rectangle is "
+                + Integer.toString(val);
+        return result;
+    }
 
     public String operate() {
         switch (this.operation) {
@@ -73,6 +74,39 @@ public class Calculate {
         return ret_val;
     }
 
+    public List<String> getN() {
+        return n;
+    }
+
+    public void setN(List<String> n) {
+        this.n = n;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
+
+    public String getWidth() {
+        return width;
+    }
+
+    public void setWidth(String width) {
+        this.width = width;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+
     public String getX() {
         return x;
     }
@@ -96,4 +130,6 @@ public class Calculate {
     public void setOperation(String operation) {
         this.operation = operation;
     }
+
+
 }
