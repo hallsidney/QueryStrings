@@ -1,5 +1,6 @@
 package com.galvanize.calculate;
 import com.galvanize.calculate.Calculate;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,5 +17,8 @@ public class MathService {
 
     @RequestMapping("/math/volume/{length}/{width}/{height}")
     public String volume(Calculate mathService){return mathService.volume();}
+
+    @PostMapping(value = "/math/area", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public String area(Calculate mathService){return mathService.area();}
 
 }
